@@ -128,3 +128,19 @@ Use [regexr.com](https://regexr.com) to create easily your delimiter's Regex.
 import { setStachRegex } from 'stach';
 setStachRegex( /{(.*?)}/gm );
 ```
+
+### Unpkg
+
+Stach is available on [unpkg](https://unpkg.com/stach)
+
+Usage :
+```html
+<script src="https://unpkg.com/stach@1.0.0/dist/stach.es2017.min.js"></script>
+<script>
+	Stach("Hello from {{name}} !", { name: 'unpkg'})
+</script>
+```
+
+### Built
+
+__Stach__ is built from __typescript__ thanks to [tsbundle](https://github.com/zouloux/tsbundle)
