@@ -1,0 +1,44 @@
+{
+  "name": "stach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/stach.es2017.cjs",
+  "module": "./dist/stach.es2020.mjs",
+  "unpkg": "./dist/stach.es2017.min.js",
+  "types": "./dist/stach.d.ts",
+  "scripts": {
+    "reset": "rm -rf node_modules && npm i",
+    "clean": "rm -rf dist",
+    "build": "tsbundle build",
+    "publish": "tsbundle publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouloux/stach.git"
+  },
+  "keywords": [
+
+  ],
+  "author": "Alexis Bouhet - ZoulouX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zouloux/stach/issues"
+  },
+  "homepage": "https://github.com/zouloux/stach#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@zouloux/tsbundle": "^1.2.17"
+  },
+  "tsbundle": {
+    "exportMap": {
+      "Stach": "./stach"
+    },
+    "files": [
+      {
+        "output": "./dist/",
+        "input": "./src/index.ts",
+        "exportBits": true
+      }
+    ]
+  }
+}
