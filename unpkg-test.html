@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script src="./dist/stach.es2017.min.js"></script>
+</head>
+<body>
+    <script>
+        // Test library injected into global scope
+        const stach1 = window.Stach
+        // Test library with require
+        const stach2 = require("stach").Stach
+        // Parameters for testing
+        const parameters = ['test {{stach}}', { stach: 'value' }]
+        // Execute library
+        const a = stach1(...parameters)
+        const b = stach2(...parameters)
+        const c = "test value"
+        // Check
+        if ( a === b && b === c )
+			console.log("Working")
+        else
+			console.log("Not working")
+    </script>
+</body>
+</html>

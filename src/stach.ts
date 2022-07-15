@@ -115,3 +115,5 @@ function matcher ( match, values ) {
 export function Stach ( template, values ) {
 	return template.replace( _stachRegex, ( i, m ) => matcher( m, values ) );
 }
+// Export default
+export default Stach

@@ -1,6 +1,6 @@
 {
   "name": "stach",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minuscule mustache-like string templating system for node or browsers.",
   "main": "./dist/stach.es2017.cjs",
   "module": "./dist/stach.es2020.mjs",
