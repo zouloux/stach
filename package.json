@@ -1,7 +1,7 @@
 {
   "name": "stach",
   "version": "1.0.0",
-  "description": "",
+  "description": "Minuscule mustache-like string templating system for node or browsers.",
   "main": "./dist/stach.es2017.cjs",
   "module": "./dist/stach.es2020.mjs",
   "unpkg": "./dist/stach.es2017.min.js",
@@ -17,7 +17,13 @@
     "url": "git+https://github.com/zouloux/stach.git"
   },
   "keywords": [
-
+    "small",
+    "tiny",
+    "mustache",
+    "templating",
+    "template",
+    "node",
+    "browser"
   ],
   "author": "Alexis Bouhet - ZoulouX",
   "license": "MIT",
@@ -36,7 +42,7 @@
     "files": [
       {
         "output": "./dist/",
-        "input": "./src/index.ts",
+        "input": "./src/stach.ts",
         "exportBits": true
       }
     ]

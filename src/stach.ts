@@ -1,8 +1,13 @@
 /**
  * Delimiters regex.
- * Override it to change templating delimiters.
  */
-export let stachDelimitersRegex = new RegExp('{{(.*?)}}', 'gm');
+// new RegExp('{{(.*?)}}', 'gm');
+let _stachRegex:RegExp = /{{(.*?)}}/gm
+
+/**
+ * Change Stach regex
+ */
+export function setStachRegex ( value:RegExp ) { _stachRegex = value }
 
 /**
  * Get processed value from values bag.
@@ -108,5 +113,5 @@ function matcher ( match, values ) {
  * @param values One level deep value bag containing properties and values as scalar or functions
  */
 export function Stach ( template, values ) {
-	return template.replace( stachDelimitersRegex, ( i, m ) => matcher( m, values ) );
+	return template.replace( _stachRegex, ( i, m ) => matcher( m, values ) );
 }
