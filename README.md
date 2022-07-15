@@ -10,7 +10,7 @@ const templated = Stach("Hello {{name}} 😸", {name: "mr Bond"})
 console.log( templated ) // Hello mr Bond 😸
 ```
 
-## Why
+## Concept
 
 Why do we need __Stach__ with literal template strings available everywhere ?
 Stach can be useful when any **small templating** is needed when **the template source is not coming from javascript** itself.
@@ -18,15 +18,14 @@ Stach can be useful when any **small templating** is needed when **the template 
 
 Stach is ultra-lightweight and compatible with Node and Browsers environments.
 It uses Javascript's Regex based `String.replace` function to be **super effective**.
-
-**Typescript definitions** are included. Enjoy !
+It's also compatible with multiline files / inputs.
+Typescript definitions are included ✌️
 
 ### Scope
 
-Stach can do variable replacement, function calls, and short ternary. **THAT'S IT.**<br>
+Stach can do __variable replacement__, __function calls__, and __short ternary evaluations__. **THAT'S IT.**<br>
 It **cannot** do advanced conditions, listing, HTML transformations, etc...
 If you need all of this, check others template engines like [Mustache](https://mustache.github.io/), [Handlebars](https://handlebarsjs.com/) or even [React JSX](https://fr.reactjs.org/docs/introducing-jsx.html) in some cases.
-
 
 ### Installation
 
@@ -144,3 +143,20 @@ Usage :
 ### Built
 
 __Stach__ is built from __typescript__ thanks to [tsbundle](https://github.com/zouloux/tsbundle)
+
+### Todo
+
+We need a way to escape `{{` when templating code-like files or simply keep not found variables.
+
+Ex :
+```typescript
+const source = `
+	...
+	const Test{{FileName}} = "Source {{doNotReplace}}"
+	...
+`
+Stach( source, {
+	FileName : "Replace" 
+})
+```
+will try to replace `{{doNotReplace}}` which is something to keep in output.
