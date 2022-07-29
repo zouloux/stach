@@ -1,7 +1,7 @@
 
 # stach
 
-__Stach__ is a ![less than 300b](./bits/stach.es2017.min.js.svg) mustache-like string templating system for node or browsers.
+__Stach__ is a ![](./bits/stach.es2017.min.js.svg) __mustache-like__ string __templating__ system for __Node__ or __Browsers__.
 
 ```typescript
 import { Stach } from "stach"
@@ -36,13 +36,11 @@ To install Stach in your project :<br>
 ### Usage
 
 If you are using CommonJS syntax :
-
 ```javascript
 const { Stach } = require('stach')
 ```
 
 Better, if ES-Modules syntax is available :
-
 ```javascript
 import { Stach } from 'stach'
 ```
@@ -120,12 +118,14 @@ Stach('Hello {{ isMale ? mr : mrs }} {{ getLastName }}. Your balance is {{ balan
 
 Here is the default delimiter regex : `/{{(.*?)}}/gm` [see](https://github.com/zouloux/stach/blob/main/src/stach.ts#L5)
 
-This will update delimiters from `{{var}}` to `{var}`.
+This will set delimiters from `{{var}}` to `{var}`.
 Use [regexr.com](https://regexr.com) to create easily your delimiter's Regex.
 
 ```javascript
-import { setStachRegex } from 'stach';
-setStachRegex( /{(.*?)}/gm );
+const singleCurlyRegex = /{(.*?)}/gm 	// regex for single curly braces
+const template = 'Hello { username }' 	// template using single curly braces
+const data = { username: 'Mr Bond' }
+Stach( template, data, singleCurlyRegex ); // "Hello Mr Bond" 
 ```
 
 ### Unpkg
@@ -136,7 +136,7 @@ Usage :
 ```html
 <script src="https://unpkg.com/stach@1.0.0/dist/stach.es2017.min.js"></script>
 <script>
-	Stach("Hello from {{name}} !", { name: 'unpkg'})
+	Stach("Hello from {{name}} !", { name: 'unpkg' })
 </script>
 ```
 
@@ -144,7 +144,7 @@ Usage :
 
 __Stach__ is built from __typescript__ thanks to [tsbundle](https://github.com/zouloux/tsbundle)
 
-### Todo
+### TODO / Not working
 
 We need a way to escape `{{` when templating code-like files or simply keep not found variables.
 
