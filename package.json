@@ -1,9 +1,9 @@
 {
   "name": "stach",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Minuscule mustache-like string templating system for node or browsers.",
-  "main": "./dist/stach.es2017.cjs",
-  "module": "./dist/stach.es2020.mjs",
+  "main": "./dist/stach.es2019.cjs",
+  "module": "./dist/stach.es2022.mjs",
   "unpkg": "./dist/stach.es2017.min.js",
   "types": "./dist/stach.d.ts",
   "scripts": {
@@ -41,6 +41,11 @@
     "exportMap": {
       "Stach": "./stach"
     },
+    "formats": [
+      "es2019.cjs",
+      "es2022.mjs",
+      "es2017.min.js"
+    ],
     "files": [
       {
         "output": "./dist/",
